@@ -11,4 +11,9 @@ button#send-button Send
 |<p>nafn: <strong data-bind="text: nafn"></strong></p>
 div#drugs 
   |<select data-bind="options: drugTypes"></select>
-  |<select data-bind="options: drugPrices"></select>
+
+ul(data-bind='template: {type:\'drugsTemplate\', foreach:drugs}')
+  script#drugsTemplate(type='text/html')
+    <li>
+    <input data-bind="value: type" />
+    </li>
