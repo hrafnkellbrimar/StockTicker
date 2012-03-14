@@ -1,10 +1,10 @@
-!!!
+!!! 5
 html
   head
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/javascripts/viewmodels.js')
+    script(src='/javascripts/viewmodelclasses.js')
     script(src='/nowjs/now.js')
     script(src='http://cloud.github.com/downloads/SteveSanderson/knockout/knockout-2.0.0.js')
   body!= body

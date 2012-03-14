@@ -1,10 +1,32 @@
 (function() {
 
+$(document).ready(function(){
+  now.receiveMessage = function(name, message){
+    $("#messages").append("<br>" + name + ": " + message);
+  }
+
+  $("#send-button").click(function(){
+    now.distributeMessage($("#text-input").val());
+    $("#text-input").val("");
+  });
+
+  $(".change").click(function(){
+    now.changeRoom($(this).text());
+  });
+
+
+  now.name = prompt("What's your name?", "");
+
+});
+
+
   $(document).ready(function() {
     var drug, drugViewModel;
     now.name = prompt("What's your name?", "");
     drug = function(type) {
-      this.type = ko.observable(type);
+      return {
+        type: ko.observable(type)
+      };
     };
     drugViewModel = function() {
       this.nafn = ko.observable(now.name);
@@ -17,12 +39,11 @@
       now.distributeMessage($("#text-input").val());
       return $("#text-input").val("");
     });
-    $(".change").click(function() {
+    return $(".change").click(function() {
       now.changeRoom($(this).text());
       now.changeRoom($(this).text());
+      return ko.applyBindings(new drugViewModel());
     });
-    
-    ko.applyBindings(new drugViewModel());
   });
 
 }).call(this);

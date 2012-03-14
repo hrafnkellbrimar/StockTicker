@@ -1,10 +1,14 @@
 (function() {
 
   $(document).ready(function() {
-    var drugViewModel;
+    var drug, drugViewModel;
+    now.name = prompt("What's your name?", "");
+    drug = function(type) {
+      this.type = ko.observable(type);
+    };
     drugViewModel = function() {
-      this.nafn = now.name;
-      return this.drugTypes = ko.observableArray(["hass", "LSD"]);
+      this.nafn = ko.observable(now.name);
+      this.drugs = ko.observableArray([new drug("hass"), new drug("LSD")]);
     };
     now.receiveMessage = function(name, message) {
       return $("#messages").append("<br>" + name + ": " + message);
@@ -14,10 +18,11 @@
       return $("#text-input").val("");
     });
     $(".change").click(function() {
-      return now.changeRoom($(this).text());
+      now.changeRoom($(this).text());
+      now.changeRoom($(this).text());
     });
-    now.name = prompt("What's your name?", "");
-    return ko.applyBindings(new drugViewModel());
+    
+    ko.applyBindings(new drugViewModel());
   });
 
 }).call(this);

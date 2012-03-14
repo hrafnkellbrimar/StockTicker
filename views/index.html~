@@ -1,0 +1,19 @@
+<h1>title</h1>
+<p>Welcome to title</p>
+<div>
+	<a class="change selected" href="#">room 1</a>
+	-
+	<a class="change" href="#">room 2</a>
+	-
+	<a class="change" href="#">room 3</a>
+</div>
+<div id="messages">
+	You're in room 1
+</div>
+<button id="send-button">send</button>
+<p>
+	nafn: <strong data-bind="text: nafn"></strong>
+</p>
+<ul data-bind="foreach: drugs">
+	<li data-bind="text: type"></li>
+</ul>
