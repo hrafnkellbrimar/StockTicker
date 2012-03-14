@@ -1,2 +1,18 @@
-include index.html
-
+//include index.html
+h1 title
+  p Welcome to title
+  div
+    a.change.selected(href='#') room 1
+     -
+    a.change(href='#') room 2
+     -
+    a.change(href='#') room 3
+  #messages You're in room 1
+  input#text-input
+  button#send-button Send
+  p nafn:
+    strong(data-bind='text: nafn')
+  ul(data-bind='foreach:drugs')
+    li(data-bind='text: type')
+  script#drugsTemplate(type='text/html')
+    li ${ $data.type }
