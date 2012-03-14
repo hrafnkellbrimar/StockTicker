@@ -16,4 +16,12 @@
 </p>
 <ul data-bind="foreach: drugs">
 	<li data-bind="text: type"></li>
+	<li data-bind="text: price"></li>
 </ul>
+<button id="buyButton">buy</button>
+
+<ul data-bind="template: {name='drugsTemplate', foreach:drugs"></div>
+
+<script id="drugsTemplate" type="text/html">
+	<li>${ $data.type}</li>
+</script>
