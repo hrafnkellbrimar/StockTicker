@@ -11,11 +11,11 @@
       this.drugs = ko.observableArray([new drug("hass"), new drug("LSD")]);
     };
     now.receiveMessage = function(name, message) {
-      return $("#messages").append("<br>" + name + ": " + message);
+      $("#messages").append("<br>" + name + ": " + message);
     };
     $("#send-button").click(function() {
       now.distributeMessage($("#text-input").val());
-      return $("#text-input").val("");
+      $("#text-input").val("");
     });
     $(".change").click(function() {
       now.changeRoom($(this).text());
